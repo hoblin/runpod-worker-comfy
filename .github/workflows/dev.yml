@@ -8,6 +8,7 @@ on:
 
 jobs:
   dev:
+    if: false
     runs-on: ubuntu-latest-m
     steps:
       - name: Checkout
