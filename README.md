@@ -503,28 +503,6 @@ docker-compose up
 
 - With the local API server running, you can access ComfyUI at: [localhost:8188](http://localhost:8188)
 
-## Automatically deploy to Docker hub with GitHub Actions
-
-The repo contains two workflows that publish the image to Docker hub using GitHub Actions:
-
-- [dev.yml](.github/workflows/dev.yml): Creates the image and pushes it to Docker hub with the `dev` tag on every push to the `main` branch
-- [release.yml](.github/workflows/release.yml): Creates the image and pushes it to Docker hub with the `latest` and the release tag. It will only be triggered when you create a release on GitHub
-
-If you want to use this, you should add these **secrets** to your repository:
-
-| Configuration Variable     | Description                               | Example Value       |
-| -------------------------- | ----------------------------------------- | ------------------- |
-| `DOCKERHUB_USERNAME`       | Your Docker Hub username.                 | `your-username`     |
-| `DOCKERHUB_TOKEN`          | Your Docker Hub token for authentication. | `your-token`        |
-| `HUGGINGFACE_ACCESS_TOKEN` | Your READ access token from Hugging Face  | `your-access-token` |
-
-And also make sure to add these **variables** to your repository:
-
-| Variable Name    | Description                                                  | Example Value         |
-| ---------------- | ------------------------------------------------------------ | --------------------- |
-| `DOCKERHUB_REPO` | The repository on Docker Hub where the image will be pushed. | `timpietruskyblibla`  |
-| `DOCKERHUB_IMG`  | The name of the image to be pushed to Docker Hub.            | `runpod-worker-comfy` |
-
 ## Acknowledgments
 
 - Thanks to [all contributors](https://github.com/blib-la/runpod-worker-comfy/graphs/contributors) for your awesome work
